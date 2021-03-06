@@ -1,0 +1,22 @@
+{
+    "name": "zeek/wp-post-types",
+    "description": "Utility for building out post types quickly and easily.",
+    "type": "library",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Aaron Holbrook",
+            "email": "aaron@zeek.com"
+        }
+    ],
+	"autoload": {
+		"psr-4": {
+			"Zeek\\WpPostTypes\\": "src/"
+		}
+	},
+    "require": {
+		"php": ">=7.4",
+
+		"zeek/modernity": "dev-master"
+	}
+}
