@@ -17,6 +17,6 @@
     "require": {
 		"php": ">=7.4",
 
-		"zeek/modernity": "dev-master"
+		"zeek/modernity": "^0.1|dev-master"
 	}
 }
