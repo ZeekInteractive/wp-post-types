@@ -20,7 +20,7 @@ abstract class PostType {
 	protected bool $show_in_nav_menus = true;
 	protected bool $query_var = true;
 	protected bool $hierarchical = true;
-	protected bool $has_archive = true;
+	protected $has_archive = true;
 	protected ?int $menu_position = 27;
 	protected bool $show_in_rest = true;
 	protected string $menu_icon = 'dashicons-pin';
