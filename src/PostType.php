@@ -24,6 +24,10 @@ abstract class PostType {
 	protected ?int $menu_position = 27;
 	protected bool $show_in_rest = true;
 	protected string $menu_icon = 'dashicons-pin';
+	protected array $supports = [
+		'title',
+		'editor',
+	];
 
 	protected function __construct() {
 		add_action( 'init', [ $this, 'init' ], 5 );
@@ -44,6 +48,7 @@ abstract class PostType {
 			'menu_position'       => $this->menu_position,
 			'show_in_rest'        => $this->show_in_rest,
 			'menu_icon'           => $this->menu_icon,
+			'supports'            => $this->supports,
 		] );
 	}
 
