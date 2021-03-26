@@ -2,12 +2,10 @@
 
 namespace Zeek\WpPostTypes;
 
+use Zeek\Modernity\Patterns\Singleton;
 use Zeek\Modernity\Support\Str;
-use Zeek\Modernity\Traits\Singleton;
 
-abstract class PostType {
-	use Singleton;
-
+abstract class PostType extends Singleton {
 	protected string $slug;
 	protected string $singular;
 
@@ -30,14 +28,14 @@ abstract class PostType {
 	];
 
 	protected function __construct() {
-		add_action( 'init', [ $this, 'init' ], 5 );
+		add_action( 'init', [ $this, 'register' ], 5 );
 		$this->handleGutenberg();
 	}
 
-	public function init() {
+	public function register() {
 		register_post_type( $this->slug, [
 			'labels'              => $this->postTypeLabels( $this->singular ),
-			'public'              => $this->public,
+			'public'               => $this->public,
 			'publicly_queryable'  => $this->publicly_queryable,
 			'exclude_from_search' => $this->exclude_from_search,
 			'show_ui'             => $this->show_ui,
